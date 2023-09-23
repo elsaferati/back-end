@@ -38,7 +38,7 @@ export class OrderDetailsService {
   }
 
   async findAndMakeReadyToPrint(order_id: number) {
-    const order = await this.orderDetailsRepository.find({where: {order_id}, relations: ['product']});
+    const order = await this.orderDetailsRepository.find({where: {order_id}, relations: ['product.category']});
     return order;
   }
 }
